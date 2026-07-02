@@ -234,19 +234,6 @@ Deployment workflow:
 
 ---
 
-# 📸 Application Preview
-
-> Add screenshots of your application here.
-
-Example:
-
-```
-images/homepage.png
-images/result.png
-```
-
----
-
 # 📈 Future Improvements
 
 - User Authentication
