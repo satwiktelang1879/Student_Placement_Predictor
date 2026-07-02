@@ -1,124 +1,272 @@
-# 🎓 Student Placement Prediction Engine (Docker Containerized)
+# 🚀 Student Placement Predictor (Flask + Docker + Machine Learning)
 
-An end-to-end Machine Learning web application designed to evaluate a student's campus placement probability based on core academic performance indicators, soft skills, technical proficiency, and program dedication. The system trains a Random Forest Classifier on a feature matrix and serves real-time binary classifications through a containerized Flask micro-service.
-
----
-
-## 👤 Student Profile
-* **Name:** Akshat Garg
-* **Registration Number:** 23BCE10641
-* **Course:** B.Tech Computer Science and Engineering
-* **Institution:** VIT Bhopal University
+An end-to-end Machine Learning web application that predicts whether a student is likely to get placed based on academic and skill-based performance metrics. The application is powered by a trained Random Forest Classifier, containerized using Docker, and deployed on Render.
 
 ---
 
-## 🔗 Live Application Gateways
-* **Production Live URL:** https://student-placement-predictor-app-6rll.onrender.com
-* **Source Repository:** https://github.com/AkshatGarg2005/Student-Placement_Predictor_App
+## 🌐 Live Deployment
+
+**Live Application:**  
+https://YOUR-RENDER-URL.onrender.com
+
+**GitHub Repository:**  
+https://github.com/satwiktelang1879/Student_Placement_Predictor
 
 ---
 
-## 🛠️ System Architecture & Frameworks
-* **Language Core:** Python 3.10
-* **Container Layer:** Docker Engine
-* **Inference Pipeline:** Scikit-learn, Pandas, NumPy
-* **Application Framework:** Flask Microkernel
-* **Production Gateway:** Gunicorn WSGI Web Server
-* **Model Serialization:** Pickle Binary Format
+# 📌 Project Overview
+
+This project demonstrates the complete Machine Learning deployment pipeline:
+
+- Data Preprocessing
+- Model Training
+- Model Serialization
+- Flask Backend
+- Interactive HTML/CSS Frontend
+- Docker Containerization
+- Cloud Deployment using Render
+
+The application accepts student details through a web interface, processes them using the trained model, and instantly predicts whether the student is likely to be placed.
 
 ---
 
-## 📂 Project Directory Structure
-This deployment relies completely on container virtualization layers to stand up the web app infrastructure natively, eliminating platform-specific routing dependencies like `Procfile` or `runtime.txt`:
+# 👨‍💻 Student Profile
 
-```text
-📁 Student-Placement-Docker/
+- **Name:** Satwik Telang
+- **Reg no:** 23BAI11046
+- **Institution:** VIT Bhopal University
+- **Course:** B.Tech Computer Science Engineering
+
+---
+
+# 🛠️ Tech Stack
+
+### Programming Language
+
+- Python 3.10
+
+### Machine Learning
+
+- Scikit-learn
+- Pandas
+- NumPy
+
+### Backend
+
+- Flask
+
+### Frontend
+
+- HTML
+- CSS
+
+### Model
+
+- Random Forest Classifier
+
+### Deployment
+
+- Docker
+- Render
+
+---
+
+# 📂 Project Structure
+
+```
+Student_Placement_Predictor/
 │
-├── 📁 static/
-│   └── 📄 style.css            # Custom UI corporate layout template
+├── static/
+│   └── style.css
 │
-├── 📁 templates/
-│   └── 📄 index.html           # Main interactive user submission form
+├── templates/
+│   └── index.html
 │
-├── 📄 app.py                   # Production server app kernel & routing logic
-├── 📄 train.py                 # Feature synthesis execution pipeline and model trainer
-├── 📄 placement_model.pkl      # Serialized Random Forest Classifier binary
-├── 📄 requirements.txt         # Plaintext python packaging manifest
-├── 📄 Dockerfile               # Main container build rule file
-└── 📄 .gitignore               # Excludes python local runtime caches and datasets
-
+├── app.py
+├── train.py
+├── placement_model.pkl
+├── requirements.txt
+├── Dockerfile
+├── .gitignore
+└── README.md
 ```
 
 ---
 
-## 📊 Feature Matrix Mapping
+# 📊 Input Features
 
-Inputs submitted via the application web form are processed strictly as high-precision floats and integers, bypassing manual threshold logic or hardcoded scripts to run mathematical classifications inside the Random Forest decision tree layout:
+The prediction model considers the following student attributes:
 
-| Input Variable Field | Data Metric Type | Value Bounds / Constraints |
-| --- | --- | --- |
-| **CGPA** | Continuous Float | Scale: `0.00` to `10.00` |
-| **Communication Skills** | Continuous Float | Rating: `0.0` to `10.0` |
-| **Resume Score** | Continuous Float | Rating: `0.0` to `10.0` |
-| **Coding Score** | Continuous Float | Rating: `0.0` to `10.0` |
-| **Placement Attendance** | Continuous Float | Percentage: `0.0%` to `100.0%` |
-
-### Output Target Matrix
-
-* **`0` -> Not Placed 😔**: Features mapped below the trained model classification thresholds.
-* **`1` -> Placed 🎉**: Features successfully satisfied the predictive boundary conditions.
+| Feature | Description |
+|----------|-------------|
+| CGPA | Student's CGPA |
+| Communication Skills | Rating out of 10 |
+| Resume Score | Rating out of 10 |
+| Coding Score | Rating out of 10 |
+| Placement Attendance | Attendance Percentage |
 
 ---
 
-## ⚙️ Local Verification and Testing Instructions
+# 🎯 Prediction Output
 
-### 1. Traditional Workspace Activation
+The trained Random Forest model predicts one of the following:
 
-Initialize local testing by setting up your local conda virtual runtime environment:
+- ❌ Not Placed
+- ✅ Placed
+
+The prediction is generated instantly after the user submits the form.
+
+---
+
+# ⚙️ Local Setup
+
+## 1. Clone Repository
 
 ```bash
-# Create a brand-new Conda environment named 'placement' with Python 3.10
-conda create -n placement python=3.10 -y
+git clone https://github.com/satwiktelang1879/Student_Placement_Predictor.git
+```
 
-# Activating your workspace profile
-conda activate placement
+```bash
+cd Student_Placement_Predictor
+```
 
-# Pull dependencies directly into the local scope
+---
+
+## 2. Create Virtual Environment
+
+Windows
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+Mac/Linux
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+---
+
+## 3. Install Dependencies
+
+```bash
 pip install -r requirements.txt
-
-# Run the training script to generate the model pkl file
-python train.py
-
-# Spin up the development microkernel
-python app.py
-
 ```
-
-Open `http://127.0.0.1:5000` in your web browser.
-
-### 2. Containerized Application Emulation (Requires Docker Desktop)
-
-To review the immutable app runtime state exactly as it will run inside the cloud clusters, compile the container locally:
-
-```bash
-# Compile the container build layers
-docker build -t student-placement-app .
-
-# Start up the container container and expose the service gateway port
-docker run -p 10000:10000 student-placement-app
-
-```
-
-Open your web browser and navigate to `http://localhost:10000`.
 
 ---
 
-## 🚀 Cloud Cluster Container Deployment
+## 4. Train the Model (Optional)
 
-This production repository utilizes immediate cloud hooks linked directly to **Render**:
+```bash
+python train.py
+```
 
-* The cluster system tracks updates to the repository using Git version history on the `main` branch.
-* Render automatically reads the root `Dockerfile` to instantiate a robust Linux virtual environment image (`python:3.10-slim`).
-* Package tracking and dependency layers are isolated completely from local file system properties.
-* The system launches the production Gunicorn web processes cleanly bound to public gateway interface configurations, running continuous calculations without downtime.
-# Student_Placement_Predictor
+---
+
+## 5. Run Flask Application
+
+```bash
+python app.py
+```
+
+Open your browser and visit
+
+```
+http://127.0.0.1:5000
+```
+
+---
+
+# 🐳 Docker Deployment
+
+## Build Docker Image
+
+```bash
+docker build -t student-placement-predictor .
+```
+
+## Run Docker Container
+
+```bash
+docker run -p 5000:5000 student-placement-predictor
+```
+
+Visit
+
+```
+http://localhost:5000
+```
+
+---
+
+# ☁️ Cloud Deployment
+
+The application is deployed using **Render**.
+
+Deployment workflow:
+
+- Push code to GitHub
+- Render automatically detects repository updates
+- Docker image is built
+- Flask application starts inside the container
+- Public URL is generated
+
+---
+
+# ✨ Features
+
+- Clean User Interface
+- Instant Placement Prediction
+- Machine Learning Powered
+- Random Forest Classification
+- Dockerized Application
+- Responsive Design
+- Cloud Hosted on Render
+
+---
+
+# 📸 Application Preview
+
+> Add screenshots of your application here.
+
+Example:
+
+```
+images/homepage.png
+images/result.png
+```
+
+---
+
+# 📈 Future Improvements
+
+- User Authentication
+- Database Integration
+- Prediction History
+- Model Comparison
+- Admin Dashboard
+- Advanced Analytics
+
+---
+
+# 🙌 Acknowledgements
+
+Built as a Machine Learning Deployment project to demonstrate the complete lifecycle of developing, containerizing, and deploying an ML application using Flask, Docker, and Render.
+
+---
+
+# 📬 Contact
+
+**Satwik Telang**
+
+GitHub:  
+https://github.com/satwiktelang1879
+
+LinkedIn:  
+https://www.linkedin.com/in/YOUR-LINKEDIN/
+
+---
+⭐ If you found this project useful, consider giving it a star!
