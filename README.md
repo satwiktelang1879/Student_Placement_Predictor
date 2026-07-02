@@ -7,7 +7,7 @@ An end-to-end Machine Learning web application that predicts whether a student i
 ## 🌐 Live Deployment
 
 **Live Application:**  
-https://YOUR-RENDER-URL.onrender.com
+https://student-placement-predictor-thyx.onrender.com
 
 **GitHub Repository:**  
 https://github.com/satwiktelang1879/Student_Placement_Predictor
