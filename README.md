@@ -39,6 +39,12 @@ The application accepts student details through a web interface, processes them 
 
 ---
 
+# Application Preview
+
+<img width="480" height="663" alt="Screenshot 2026-07-02 at 10 34 13 PM" src="https://github.com/user-attachments/assets/3db945ce-db10-4bfd-b5a7-4b0b2a296a68" />
+
+---
+
 # 🛠️ Tech Stack
 
 ### Programming Language
