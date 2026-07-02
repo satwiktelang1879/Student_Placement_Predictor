@@ -259,7 +259,7 @@ GitHub:
 https://github.com/satwiktelang1879
 
 LinkedIn:  
-https://www.linkedin.com/in/YOUR-LINKEDIN/
+https://www.linkedin.com/in/satwiktelang18
 
 ---
 ⭐ If you found this project useful, consider giving it a star!
