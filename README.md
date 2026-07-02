@@ -1,4 +1,4 @@
-# 🚀 Student Placement Predictor (Flask + Docker + Machine Learning)
+# 🚀 Student Placement Predictor 
 
 An end-to-end Machine Learning web application that predicts whether a student is likely to get placed based on academic and skill-based performance metrics. The application is powered by a trained Random Forest Classifier, containerized using Docker, and deployed on Render.
 
